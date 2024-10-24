@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 14:04:58 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/24 16:18:16 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/10/24 17:42:49 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -42,6 +42,7 @@ void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t	i;
 
+	printf("ff");
 	i = 0;
 	while(i < len)
 		b[i++] = c;
@@ -50,7 +51,8 @@ void	*ft_memset(void *b, int c, size_t len)
 
 int main()
 {
-	char *s = "test test test test";
-	printf("-> std: %s\n", memset(s, 97, 5));
-  	printf("-> ft_: %s\n", ft_memset(s, 97, 5));
+	char s[] = "666666";
+	//memset(s, '0' , 5 * sizeof(char));
+	ft_memset(s, '0' , 5 * sizeof(char));
+	printf("-> std: %s\n",s);
 }
