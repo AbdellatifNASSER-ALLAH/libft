@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/24 14:04:58 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/24 23:04:17 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/10/25 12:25:57 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -47,6 +47,11 @@ void	*ft_memset(void *b, int c, size_t len)
 	while(i < len)
 		t[i++] = (unsigned char)c;
 	return (b);
+}
+
+void	bzero(void *s, size_t n)
+{
+	unsigned char
 }
 
 int main()
