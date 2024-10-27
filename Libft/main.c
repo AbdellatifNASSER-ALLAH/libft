@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 21:20:52 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/27 22:30:58 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/10/27 22:54:35 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -111,10 +111,10 @@ void	test_ft_strlcat(void)
 	char s[20] = "jj";
 	char d[20] = "jj";
 
-	srtlcat(s, src, 7);
+	strlcat(s, src, 7);
 	printf("strlcat std: %s\n", s);
-	ft_srtlcat(s, src, 7);
-	printf("strlcat ft_: %s\n", s);
+	ft_strlcat(d, src, 7);
+	printf("strlcat ft_: %s\n", d);
 
 }
 
