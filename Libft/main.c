@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 21:20:52 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/27 15:51:56 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/10/27 16:24:51 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -73,10 +73,10 @@ void run_memcpy_tests(void)
 	char s[] = "Hello, World!";
 	char d[] = "Hello, World!";
 
-    	ft_memcpy(s + 6, s, 5);
+    	ft_memcpy(s + 2, s, 5);
     	printf("memcpy  ft_: %s\n", s);
 
-    	memcpy(d + 6, d, 5);
+    	memcpy(d + 2, d, 5);
   	printf("memcpy  std: %s\n", d);
 
 }
@@ -86,9 +86,9 @@ int test_ft_memmove(void)
 	char s[] = "Hello, World!";
 	char d[] = "Hello, World!";
 	
-	memmove(0, 0 , 5);
+	memmove(s + 2, s , 5);
 	printf("memmove std: %s \n",s);
-	ft_memmove(d + 6, s , 5);
+	ft_memmove(d + 2, d , 5);
 	printf("memmove ft_: %s \n", d);
 	return 1;
 }
@@ -96,9 +96,9 @@ int test_ft_memmove(void)
 int main(void)
 {
     printf("<---------- Output --------->\n\n");
-    test_ft_isalpha();
-    test_ft_isdigit();
-    test_ft_isalnum();
+    //test_ft_isalpha();
+    //test_ft_isdigit();
+    //test_ft_isalnum();
     run_memcpy_tests();
     test_ft_memmove();
 
