@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 21:20:52 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/27 22:54:35 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/10/27 23:34:06 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -107,13 +107,13 @@ void	test_ft_strlcpy(void)
 
 void	test_ft_strlcat(void)
 {
-	char *src = "hello";
-	char s[20] = "jj";
-	char d[20] = "jj";
+	char *src = 0;
+	char s[20] = "123456";
+	char d[20] = "123456";
 
-	strlcat(s, src, 7);
+	strlcat(s, src, 20);
 	printf("strlcat std: %s\n", s);
-	ft_strlcat(d, src, 7);
+	ft_strlcat(d, src, 20);
 	printf("strlcat ft_: %s\n", d);
 
 }
