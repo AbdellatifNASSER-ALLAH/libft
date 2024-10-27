@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 21:20:52 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/26 16:16:05 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/10/27 15:51:56 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -70,45 +70,27 @@ int test_ft_isalnum(void)
 
 void run_memcpy_tests(void)
 {
-    char source[] = "Hello, World!";
-    char overlap_src[] = "Hello, World!";
-    char dest_std[20]; // For standard memcpy
-    char dest_ft[20];  // For your ft_memcpy
+	char s[] = "Hello, World!";
+	char d[] = "Hello, World!";
 
-    // Test 1: Basic Copy
-    memcpy(dest_std, source, strlen(source) + 1); // +1 to include null terminator
-    ft_memcpy(dest_ft, source, strlen(source) + 1);
-    if (strcmp(dest_std, dest_ft) == 0)
-    {
-        printf("Test 1: Basic Copy: PASS\n");
-    }
-    else
-    {
-        printf("Test 1: Basic Copy: FAIL\n");
-        printf("Expected: %s\n", dest_std);
-        printf("Got: %s\n", dest_ft);
-    }
+    	ft_memcpy(s + 6, s, 5);
+    	printf("memcpy  ft_: %s\n", s);
 
-    // Test 2: Overlapping Regions
-    ft_memcpy(overlap_src + 2, overlap_src, 5); // Copy "Hello" into "llo"
-    printf("Test 2: Overlapping Regions ft_memcpy: %s\n", overlap_src); // Expect "HeHello, World!"
+    	memcpy(d + 6, d, 5);
+  	printf("memcpy  std: %s\n", d);
 
-    // Reset the string for the next test
-    strcpy(overlap_src, "Hello, World!");
-    memcpy(overlap_src + 2, overlap_src, 5); // Copy "Hello" into "llo"
-    printf("Test 2: Overlapping Regions std memcpy: %s\n", overlap_src); // Expect "HeHello, World!"
+}
 
-    // Test 4: Edge Case (0 bytes)
-    memcpy(dest_std, source, 0);
-    ft_memcpy(dest_ft, source, 0);
-    if (strcmp(dest_std, dest_ft) == 0)
-    {
-        printf("Test 4: Copy 0 bytes: PASS\n");
-    }
-    else
-    {
-        printf("Test 4: Copy 0 bytes: FAIL\n");
-    }
+int test_ft_memmove(void)
+{
+	char s[] = "Hello, World!";
+	char d[] = "Hello, World!";
+	
+	memmove(0, 0 , 5);
+	printf("memmove std: %s \n",s);
+	ft_memmove(d + 6, s , 5);
+	printf("memmove ft_: %s \n", d);
+	return 1;
 }
 
 int main(void)
@@ -118,7 +100,8 @@ int main(void)
     test_ft_isdigit();
     test_ft_isalnum();
     run_memcpy_tests();
-    
+    test_ft_memmove();
+
     return 0;
 }
 
