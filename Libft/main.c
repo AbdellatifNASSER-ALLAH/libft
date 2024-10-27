@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 21:20:52 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/27 16:24:51 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/10/27 17:58:18 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -93,14 +93,27 @@ int test_ft_memmove(void)
 	return 1;
 }
 
+void	test_ft_strlcpy(void)
+{
+	char *src = "";
+	char s[20];
+	char d[20];
+
+	strlcpy(s, src, sizeof(s));
+	printf("strlcpy std: %s\n", s);
+	ft_strlcpy(d, src, sizeof(d));
+	printf("strlcpy ft_: %s\n", d);
+}
+
 int main(void)
 {
     printf("<---------- Output --------->\n\n");
     //test_ft_isalpha();
     //test_ft_isdigit();
     //test_ft_isalnum();
-    run_memcpy_tests();
-    test_ft_memmove();
+    //run_memcpy_tests();
+    //test_ft_memmove();
+   test_ft_strlcpy();
 
     return 0;
 }
