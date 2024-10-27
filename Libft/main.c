@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 21:20:52 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/27 17:58:18 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/10/27 22:30:58 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -95,14 +95,27 @@ int test_ft_memmove(void)
 
 void	test_ft_strlcpy(void)
 {
-	char *src = "";
+	char *src = "123456789012345678901111";
 	char s[20];
 	char d[20];
 
-	strlcpy(s, src, sizeof(s));
+//	strlcpy(s, src, sizeof(s));
 	printf("strlcpy std: %s\n", s);
 	ft_strlcpy(d, src, sizeof(d));
 	printf("strlcpy ft_: %s\n", d);
+}
+
+void	test_ft_strlcat(void)
+{
+	char *src = "hello";
+	char s[20] = "jj";
+	char d[20] = "jj";
+
+	srtlcat(s, src, 7);
+	printf("strlcat std: %s\n", s);
+	ft_srtlcat(s, src, 7);
+	printf("strlcat ft_: %s\n", s);
+
 }
 
 int main(void)
@@ -113,8 +126,8 @@ int main(void)
     //test_ft_isalnum();
     //run_memcpy_tests();
     //test_ft_memmove();
-   test_ft_strlcpy();
-
+    //test_ft_strlcpy();
+    test_ft_strlcat();
     return 0;
 }
 
