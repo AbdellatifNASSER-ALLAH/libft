@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/27 18:28:37 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/27 22:54:12 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/10/27 23:14:00 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -19,8 +19,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	dlen = ft_strlen(dst);
 	slen = ft_strlen(src);
+	if (dlen <= size)
+		return (size + slen);
 	i = dlen;
-	while (*src && i < dlen + size - 1)
+	while (*src && i < size - 1)
 		dst[i++] = *src++;
 	dst[i] = '\0';
 	return (slen + size);
