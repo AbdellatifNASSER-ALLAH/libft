@@ -1,0 +1,1 @@
+cat funcs | xargs -I {} sh -c  'man 3 {} | head -n 15 | tail -n 3 ;'
