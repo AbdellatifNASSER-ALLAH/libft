@@ -1,26 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 14:23:53 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/28 22:27:11 by abdnasse         ###   ########.fr       */
+/*   Created: 2024/10/28 23:40:23 by abdnasse          #+#    #+#             */
+/*   Updated: 2024/10/28 23:40:59 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memchr(const char *s, int c, size_t n)
+char	*ft_strdup(const char *s)
 {
-	unsigned char *p;
-
-	p = s;
-	while (*p++ && n--)
-	{
-		if (*p == c)
-			return (p);
-	}
 	return (0);
-
 }

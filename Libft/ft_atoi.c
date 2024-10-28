@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 14:23:53 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/28 22:27:11 by abdnasse         ###   ########.fr       */
+/*   Created: 2024/10/28 23:21:06 by abdnasse          #+#    #+#             */
+/*   Updated: 2024/10/28 23:45:25 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memchr(const char *s, int c, size_t n)
+int	ft_atoi(const char *nptr)
 {
-	unsigned char *p;
+	int	res;
+	int	sign;
 
-	p = s;
-	while (*p++ && n--)
-	{
-		if (*p == c)
-			return (p);
-	}
-	return (0);
-
+	res = 0;
+	sign = 1;
+	while (*nptr == 32 || (*nptr >= 9 && *nptr <= 13))
+		nptr++;
+	if (*nptr == 32 || (*nptr >= 9 && *nptr <= 13))
+		sign *= -1;
+	nptr++;
+	while (*nptr && *nptr >= '0' && *nptr <= '9')
+		res = res * 10 + (*nptr++ - 48);
+	return (sign * res);
 }
