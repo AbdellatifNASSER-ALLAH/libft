@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 21:20:52 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/28 10:42:51 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/10/28 12:41:42 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -111,7 +111,7 @@ void	test_ft_strlcat(void)
 	char s[20] = "123456";
 	char d[20] = "123456";
 
-	strlcat(s, src, 20);
+//	strlcat(s, src, 20);
 	printf("strlcat std: %s\n", s);
 	ft_strlcat(d, src, 20);
 	printf("strlcat ft_: %s\n", d);
@@ -121,11 +121,12 @@ void	test_ft_strlcat(void)
 void test_ft_toupper(void)
 {
 	char t[] = {97, 65, 0 , -1, 255, 127};
-	int i = 0;
+	size_t i = 0;
 
-	while (i < sizeof(t))
+
+	while (i < sizeof(t)/sizeof(t[0]))
 	{
-		printf("\nTest %d : toupper(%c / %d)---\n", i+1, t[i], t[i]);
+		printf("\nTest %lu : toupper(%c / %d)---\n", i+1, t[i], t[i]);
 		printf("std --> %c / %d\n", toupper(t[i]), toupper(t[i]));
 		printf("ft_ --> %c / %d\n", ft_toupper(t[i]), ft_toupper(t[i]));
 		i++;
@@ -135,28 +136,65 @@ void test_ft_toupper(void)
 void test_ft_tolower(void)
 {
 	char t[] = {97, 65, 0 , -1, 255, 127, 128, -2};
-	int i = 0;
+	size_t i = 0;
 
-	while (i < sizeof(t))
+	while (i < sizeof(t)/sizeof(t[0]))
 	{
-		printf("\nTest %d : tolower(%c / %d)---\n", i+1, t[i], t[i]);
+		printf("\nTest %lu : tolower(%c / %d)---\n", i+1, t[i], t[i]);
 		printf("std --> %c / %d\n", tolower(t[i]), tolower(t[i]));
 		printf("ft_ --> %c / %d\n", ft_tolower(t[i]), ft_tolower(t[i]));
 		i++;
 	}
 }
+
+void	test_ft_strchr()
+{
+	char *s = "Hello, World!";
+	int c[] = {127, 32, ',', 'W', '!', -1 , '\0'};
+	size_t i = 0;
+
+	while (i < sizeof(c)/sizeof(c[0]))
+	{
+		printf("\n Test %lu : strchr(%s, %d/%c) ---\n", i+1, s, c[i], c[i]);
+		printf("std: --> |%s\n",strchr(s, c[i]));
+		printf("ft_: --> |%s\n",ft_strchr(s, c[i]));
+		i++;
+	}
+
+
+}
+
+void	test_ft_strrchr()
+{
+	char *s = "Hello, World!";
+	int c[] = {'l', 'o', 127, '!', -1 , '\0'};
+	size_t i = 0;
+
+	while (i < sizeof(c)/sizeof(c[0]))
+	{
+		printf("\n Test %lu : strrchr(%s, %d/%c) ---\n", i+1, s, c[i], c[i]);
+		printf("std: --> |%p\n",strrchr(s, c[i]));
+		printf("ft_: --> |%p\n",ft_strrchr(s, c[i]));
+		i++;
+	}
+
+
+}
+
 int main(void)
 {
-    printf("<---------- Output --------->\n\n");
-    //test_ft_isalpha();
-    //test_ft_isdigit();
-    //test_ft_isalnum();
-    //run_memcpy_tests();
-    //test_ft_memmove();
-    //test_ft_strlcpy();
-    //test_ft_strlcat();
+	printf("<---------- Output --------->\n\n");
+	//test_ft_isalpha();
+	//test_ft_isdigit();
+	//test_ft_isalnum();
+	//run_memcpy_tests();
+	//test_ft_memmove();
+	//test_ft_strlcpy();
+	//test_ft_strlcat();
 	//test_ft_toupper();
-	test_ft_tolower();
-    return 0;
+	//test_ft_tolower();
+	//test_ft_strchr();
+	test_ft_strrchr();
+	return 0;
 }
 
