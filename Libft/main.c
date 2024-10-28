@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 21:20:52 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/27 23:34:06 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/10/28 10:42:51 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -118,6 +118,33 @@ void	test_ft_strlcat(void)
 
 }
 
+void test_ft_toupper(void)
+{
+	char t[] = {97, 65, 0 , -1, 255, 127};
+	int i = 0;
+
+	while (i < sizeof(t))
+	{
+		printf("\nTest %d : toupper(%c / %d)---\n", i+1, t[i], t[i]);
+		printf("std --> %c / %d\n", toupper(t[i]), toupper(t[i]));
+		printf("ft_ --> %c / %d\n", ft_toupper(t[i]), ft_toupper(t[i]));
+		i++;
+	}
+}
+
+void test_ft_tolower(void)
+{
+	char t[] = {97, 65, 0 , -1, 255, 127, 128, -2};
+	int i = 0;
+
+	while (i < sizeof(t))
+	{
+		printf("\nTest %d : tolower(%c / %d)---\n", i+1, t[i], t[i]);
+		printf("std --> %c / %d\n", tolower(t[i]), tolower(t[i]));
+		printf("ft_ --> %c / %d\n", ft_tolower(t[i]), ft_tolower(t[i]));
+		i++;
+	}
+}
 int main(void)
 {
     printf("<---------- Output --------->\n\n");
@@ -127,7 +154,9 @@ int main(void)
     //run_memcpy_tests();
     //test_ft_memmove();
     //test_ft_strlcpy();
-    test_ft_strlcat();
+    //test_ft_strlcat();
+	//test_ft_toupper();
+	test_ft_tolower();
     return 0;
 }
 
