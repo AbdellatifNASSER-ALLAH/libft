@@ -6,12 +6,12 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 23:38:53 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/28 23:39:24 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/10/29 11:54:03 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	return (0);
+	return ((void *)(nmemb + size));
 }

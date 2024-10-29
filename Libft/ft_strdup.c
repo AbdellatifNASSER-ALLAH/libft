@@ -6,12 +6,12 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 23:40:23 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/28 23:40:59 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/10/29 11:58:21 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
-	return (0);
+	return ((char *)s);
 }
