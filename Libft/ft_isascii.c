@@ -6,12 +6,12 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 14:20:47 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/25 14:21:39 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/10/29 21:20:51 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 int	ft_isascii(int c)
 {
-	return (c >= 0 && c <= 128);
+	return (c >= 0 && c <= 127);
 }

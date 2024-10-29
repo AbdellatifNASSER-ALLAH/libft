@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 12:10:15 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/28 12:44:23 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/10/29 21:56:54 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -14,16 +14,19 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*p;
+	char	cc;
 
+	p = (char *)s;
+	cc = c;
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == cc)
 			p = (char *)s;
 		s++;
 	}
-	if (*s == c)
+	if (*s == cc)
 		p = (char *)s;
-	if (*p == c)
+	if (*p == cc)
 		return (p);
 	return (NULL);
 }
