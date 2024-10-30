@@ -13,7 +13,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char *p;
+	unsigned char	*p;
 
 	p = (unsigned char *)s;
 	while (n--)
@@ -23,5 +23,4 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		p++;
 	}
 	return (0);
-
 }

@@ -14,9 +14,9 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	unsigned char	*p;
-	size_t	i;
+	size_t			i;
 
-	if (size == 0 ||  nmemb == 0)
+	if (size == 0 || nmemb == 0)
 	{
 		p = (unsigned char *)malloc(sizeof(char));
 		if (!p)
