@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 16:21:58 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/31 21:00:48 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/10/31 23:11:17 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -30,14 +30,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 
 	end = ft_strlen(s1);
-	if (!*s1 && !*set)
-		return (ft_strdup("\0"));
+	if ((!*s1 && !*set) || !end)
+		return (ft_strdup(""));
 	start = 0;
-	while (start < end && ft_inset(s1[start], set))
+	end--;
+	while (start <= end && ft_inset(s1[start], set))
 		start++;
-	while (end && ft_inset(s1[end], set))
+	while (end > start && ft_inset(s1[end], set))
 		end--;
-	p = (char *)malloc((end - start + 1) * sizeof(char));
+	p = (char *)malloc((end - start + 2) * sizeof(char));
 	if (!p)
 		return (0);
 	i = 0;
