@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/25 14:24:38 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/30 23:55:40 by abdnasse         ###   ########.fr       */
+/*   Created: 2024/10/31 16:21:58 by abdnasse          #+#    #+#             */
+/*   Updated: 2024/10/31 16:36:17 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	unsigned char	*p;
+	char	*p;
+	size_t	len;
+	size_t	i;
 
-	p = s;
-	while (n--)
-		*p++ = '\0';
+	len = ft_strlen(s1);
+	if (!*s1 && !*set)
+		return (ft_strdup("\0");
+	i = 0;
+	while (i < len)
+	{
+		j = 0;
+		while (s1[i] == set[j++])
+		if (!set[j])
+		{
+			p = (char *)s1[i];
+			i = len - 1;
+		}
+		i++;
+	}
+	while (len 
+
 }
