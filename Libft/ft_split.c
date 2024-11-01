@@ -10,39 +10,54 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <stdio.h>
+
+size_t	ft_words(char *s, char c)
+{
+	size_t	count;
+
+	count = 0;
+	while (*s)
+	{
+		if (*s != c && *(s + 1) == c)
+			count++;
+		s++;
+	}
+	return (count);
+}
 
 char	**ft_split(char const *s, char c)
 {
 	char	**p;
-	char	*ss;
 	size_t	count;
 	size_t	i;
-	size_t	j;
 
-	count = 0;
-	while (*ss && *ss == c && *(ss - 1) != c)
-	{
-		count++;
-		ss++;
-	}
-	p = (char **)malloc((count + 1) * sizeof(char *));
+	p = (char **)malloc((ft_words((char *)s, c) + 1) * sizeof(char *));
 	if (!p)
 		return (0);
 	i = 0;
 	while (*s)
 	{
-		j = 0;
 		count = 0;
-		while (*s++ == c)
-			while (*s++ != c)
-				count++;
-		p[i] = (char *)malloc((count + 1) * sizeof(char));
-		while (j < count)
-		{
-			p[i][j++] = *(s - count + j);
-			j++;
-		}
-		p[i][j] = 0;
-		s++;
+		while (*s == c)
+			s++;
+		while (*s != c && *s++)
+			count++;
+		p[i++] = ft_substr((s - count), 0, count);
+		while (*s == c)
+			s++;
 	}
+	p[i] = 0;
+	return (p);
+}
+
+int	main()
+{
+	char	*s = " hello world   this is   just  a  test  ";
+	char	c = 32;
+	char **p  = ft_split(s, c);
+	size_t	count = ft_words(s, c);
+
+	for (size_t i = 0; i < count ; i++)
+		printf("--> %s \n", p[i]);
 }
