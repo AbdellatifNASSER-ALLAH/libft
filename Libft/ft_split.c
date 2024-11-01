@@ -10,12 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
 
-size_t	ft_words(char *s, char c)
+size_t	ft_words(const char *s, char c)
 {
 	size_t	count;
 
+	if (!s)
+		return (0);
 	count = 0;
 	while (*s)
 	{
@@ -32,7 +33,9 @@ char	**ft_split(char const *s, char c)
 	size_t	count;
 	size_t	i;
 
-	p = (char **)malloc((ft_words((char *)s, c) + 1) * sizeof(char *));
+	if (!s)
+		return (0);
+	p = (char **)malloc((ft_words(s, c) + 1) * sizeof(char *));
 	if (!p)
 		return (0);
 	i = 0;
@@ -41,23 +44,13 @@ char	**ft_split(char const *s, char c)
 		count = 0;
 		while (*s == c)
 			s++;
-		while (*s != c && *s++)
+		if (!*s)
+			break ;
+		while (*s != c && s[count])
 			count++;
-		p[i++] = ft_substr((s - count), 0, count);
-		while (*s == c)
-			s++;
+		p[i++] = ft_substr((s), 0, count);
+		s += count;
 	}
 	p[i] = 0;
 	return (p);
-}
-
-int	main()
-{
-	char	*s = " hello world   this is   just  a  test  ";
-	char	c = 32;
-	char **p  = ft_split(s, c);
-	size_t	count = ft_words(s, c);
-
-	for (size_t i = 0; i < count ; i++)
-		printf("--> %s \n", p[i]);
 }
