@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <stdio.h>
+#include <unistd.h>
 
 size_t	ft_words(const char *s, char c)
 {
@@ -20,7 +22,7 @@ size_t	ft_words(const char *s, char c)
 	count = 0;
 	while (*s)
 	{
-		if (*s != c && *(s + 1) == c)
+		if (*s != c && (*(s + 1) == c || !*(s + 1)))
 			count++;
 		s++;
 	}
@@ -42,13 +44,13 @@ char	**ft_split(char const *s, char c)
 	while (*s)
 	{
 		count = 0;
-		while (*s == c)
+		while (*s && *s == c)
 			s++;
 		if (!*s)
 			break ;
-		while (*s != c && s[count])
+		while (s[count] && s[count] != c)
 			count++;
-		p[i++] = ft_substr((s), 0, count);
+		p[i++] = ft_substr(s, 0, count);
 		s += count;
 	}
 	p[i] = 0;
