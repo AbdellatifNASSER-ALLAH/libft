@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 12:50:04 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/11/01 12:50:12 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/11/02 17:16:30 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -29,14 +29,21 @@ size_t	ft_words(const char *s, char c)
 	return (count);
 }
 
+char	**ft_free_all(char **p, int len)
+{
+	if (len == 0)
+		return (0);
+	while (len)
+		free(p[len--]);
+	return (0);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**p;
 	size_t	count;
 	size_t	i;
 
-	if (!s)
-		return (0);
 	p = (char **)malloc((ft_words(s, c) + 1) * sizeof(char *));
 	if (!p)
 		return (0);
@@ -51,6 +58,8 @@ char	**ft_split(char const *s, char c)
 		while (s[count] && s[count] != c)
 			count++;
 		p[i++] = ft_substr(s, 0, count);
+		if (!p[i - 1])
+			return (ft_free_all(&p[i - 2], i - 1));
 		s += count;
 	}
 	p[i] = 0;
