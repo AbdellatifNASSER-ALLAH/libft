@@ -1,10 +1,13 @@
 #include "../Libft/libft.h"
 #include <stdio.h>
+
 int main()
 {
-	char *ptr ="hello!     ";
-	
-	char **split = ft_split(ptr, 32);
-	printf("\"%s\"\n", *(split));
-	printf("\"%s\"\n", *(split + 1));
+	char *s ="   one two three     fout five    six  seven     eight   nine ten       ";
+	char **strs = ft_split(s, 32);
+	int	i = 0;
+
+	while (*(strs + i) != NULL)
+		printf("\"%s\"\n", *(strs + i++));
+	printf("\"%s\"\n", *(strs + i));
 }
