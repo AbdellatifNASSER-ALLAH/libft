@@ -10,33 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
-#include <unistd.h>
 
-size_t	ft_words(const char *s, char c)
-{
-	size_t	count;
-
-	if (!s)
-		return (0);
-	count = 0;
-	while (*s)
-	{
-		if (*s != c && (*(s + 1) == c || !*(s + 1)))
-			count++;
-		s++;
-	}
-	return (count);
-}
-
-char	**ft_free_all(char **p, int len)
-{
-	if (len == 0)
-		return (0);
-	while (len)
-		free(p[len--]);
-	return (0);
-}
+size_t	ft_words(const char *s, char c);
+char	*ft_fill_word(char **p, int size, char const *s, size_t len);
 
 char	**ft_split(char const *s, char c)
 {
@@ -57,11 +33,50 @@ char	**ft_split(char const *s, char c)
 			break ;
 		while (s[count] && s[count] != c)
 			count++;
-		p[i++] = ft_substr(s, 0, count);
-		if (!p[i - 1])
-			return (ft_free_all(&p[i - 2], i - 1));
+		p[i] = ft_fill_word(p, i, s, count);
+		if (!p[i])
+			return (0);
 		s += count;
+		i++;
 	}
 	p[i] = 0;
 	return (p);
+}
+
+char	*ft_fill_word(char **p, int i, char const *s, size_t len)
+{
+	size_t	j;
+
+	p[i] = (char *)malloc((len + 1) * sizeof(char));
+	if (!p[i])
+	{
+		while (i--)
+			free(p[i]);
+		free(p);
+		return (0);
+	}
+	j = 0;
+	while (j < len)
+	{
+		p[i][j] = s[j];
+		j++;
+	}
+	p[i][j] = 0;
+	return (p[i]);
+}
+
+size_t	ft_words(const char *s, char c)
+{
+	size_t	count;
+
+	if (!s)
+		return (0);
+	count = 0;
+	while (*s)
+	{
+		if (*s != c && (*(s + 1) == c || !*(s + 1)))
+			count++;
+		s++;
+	}
+	return (count);
 }

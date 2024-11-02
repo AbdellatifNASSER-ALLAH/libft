@@ -16,16 +16,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	unsigned char	*p;
 	size_t			i;
 
-	if (size == 0 || nmemb == 0)
-	{
-		p = (unsigned char *)malloc(sizeof(char));
-		if (!p)
-			return (0);
-		*p = 0;
-		return ((void *)p);
-	}
-	if (nmemb > SIZE_MAX / size)
-		return (0);
 	p = (unsigned char *)malloc(nmemb * size);
 	if (!p)
 		return (0);
