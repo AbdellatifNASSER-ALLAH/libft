@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 19:52:29 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/11/03 23:02:36 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/11/03 23:33:00 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -22,7 +22,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (n < 0)
 	{
-		ft_putchar_fd('-',fd);
+		ft_putchar_fd('-', fd);
 		n = -n;
 	}
 	if (n < 10)

@@ -6,14 +6,14 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 19:05:54 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/11/03 21:00:45 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/11/03 23:37:39 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	if (!*s || fd < 0)
+	if (fd < 0)
 		return ;
 	write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
