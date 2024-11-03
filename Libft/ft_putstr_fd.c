@@ -6,14 +6,14 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 18:47:05 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/11/03 18:48:34 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/11/03 20:58:47 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (!*s)
-		return (0);
+	if (!*s || fd < 0)
+		return ;
 	write(fd, s, ft_strlen(s));
 }

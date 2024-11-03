@@ -6,14 +6,14 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 17:42:46 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/11/03 18:50:50 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/11/03 20:59:09 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (!c)
-		return (0);
-	write(fd, c, 1);
+	if (!c || fd < 0)
+		return ;
+	write(fd, &c, 1);
 }
