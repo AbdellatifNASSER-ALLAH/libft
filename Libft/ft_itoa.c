@@ -16,7 +16,7 @@ int	ft_ilen(int n);
 char	*ft_itoa(int n)
 {
 	char	p[12];
-	int	len;
+	int		len;
 
 	if (n == 0)
 		return (ft_strdup("0"));
