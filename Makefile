@@ -1,6 +1,9 @@
 .PHONY: all commit add status
 
-all: commit
+all: push
+
+push: commit
+	@git push
 
 commit: add
 	@read -p "Enter commint: " MSG ;\
@@ -12,3 +15,9 @@ add: status
 
 status: 
 	@git status
+
+pull:
+	@git pull
+
+rebase: 
+	@git pull --rebase
