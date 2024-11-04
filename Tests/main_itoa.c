@@ -1,13 +1,29 @@
 #include "../Project/libft.h"
 #include <stdio.h>
 #include <limits.h>
-
+#include<string.h>
 int main()
 {
-	int	nbrs[] = {0, 12, 1000, -12, -85858, INT_MIN, INT_MAX};
-	size_t	i;
+	int i;
+	char exp[30];
+	char *res;
 
-	i = 0;
-	while (i < sizeof(nbrs) / sizeof(nbrs[0]))
-		printf("--|%s|\n", ft_itoa(nbrs[i++]));
+	i = 1935300000;
+	while (1)
+	{
+		sprintf(exp,"%d",i);	
+		res = ft_itoa(i);
+		if(strcmp(exp,res))
+		{
+			printf("ERROR\nExpected : %s\nGot    : %s\n",exp,res);
+			break;
+		}
+		if(i % 100000 == 0)
+			printf("PASS %d\n",i);
+		if(i == INT_MAX)
+			break;
+		i++;
+
+
+	}
 }

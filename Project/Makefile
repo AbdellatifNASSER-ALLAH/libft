@@ -28,8 +28,8 @@ $(NAME): $(OBJ)
 	ar -cr $(NAME) $(OBJ)
 	ranlib $(NAME)	
 
-$(OBJ)  : $(SRC)
-	$(CC) $(CFLAGS) $(SRC) -c -I./ 
+%.o : %.c
+	$(CC) $(CFLAGS) -o $@ $< -c -I./ 
 
 clean:
 	-rm $(OBJ)

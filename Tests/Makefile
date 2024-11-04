@@ -12,7 +12,7 @@ LIB = -L$(LIB_DIR) -l$(LIB_NAME)
 all:
 	@echo "You have to paste the of the function you wanna compile!"
 
--%: $(SRCS)/main_%.c $(LIB)
+f%: $(SRCS)/main_%.c $(LIB)
 	@echo "Building with fsanitize..."
 	$(CC) $(CFLAGS) $(SANITIZE) $^
 
