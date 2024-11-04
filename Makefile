@@ -10,6 +10,7 @@ commit: add
 	git commit -m "$$MSG"
 
 add: status
+	@echo "adding..."
 	@git add .
 	@git status
 
