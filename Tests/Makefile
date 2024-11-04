@@ -4,7 +4,7 @@ CFLAGS = -Wall -Wextra -Werror
 SANITIZE = -fsanitize=address
 
 SRCS = ./
-LIB_DIR = ../Project
+LIB_DIR = ../Project/
 LIB_NAME = ft
 NAME = libft.a
 LIB = -L$(LIB_DIR) -l$(LIB_NAME)
@@ -12,19 +12,19 @@ LIB = -L$(LIB_DIR) -l$(LIB_NAME)
 all:
 	@echo "You have to paste the of the function you wanna compile!"
 
--%: $(LIB) $(SRCS)/main_%.c
+-%: $(SRCS)/main_%.c $(LIB)
 	@echo "Building with fsanitize..."
-	$(CC) $(CFLAGS) $(SANITIZE) $< $(LIB)
+	$(CC) $(CFLAGS) $(SANITIZE) $^
 
-%: $(LIB) $(SRCS)/main_%.c
+%: $(SRCS)/main_%.c $(LIB)
 	@echo "Building..."
-	$(CC) $(CFLAGS) $< $(LIB)
+	$(CC) $(CFLAGS) $^
 
 $(LIB):
-	@if [! -f $(LIB_DIR)/$(NAME)]; then;\
-		$(MAKE) -C $(LIB_DIR) clean;\
-		$(MAKE) -C $(LIB_DIR);\
-	fi	
+	@if [ ! -f $(LIB_DIR)/$(NAME) ]; then \
+		$(MAKE) -C $(LIB_DIR) ;\
+		$(MAKE) -C $(LIB_DIR) clean ;\
+	fi
 
 run:
 	./a.out
@@ -32,4 +32,7 @@ run:
 clean:
 	-rm a.out
 
-.PHONY: all run clean
+fclean: clean
+	rm $(LIB_DIR)/$(NAME)
+
+.PHONY: all run clean fclean

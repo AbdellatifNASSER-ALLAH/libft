@@ -1,10 +1,10 @@
+#include "../Project/libft.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
 #include <limits.h>
 #include <assert.h>
-#include "libft.h"
 
 // Helper function to print test results
 void print_result(int condition, const char *test_name) {
