@@ -1,4 +1,4 @@
-.PHONY: all commit add status
+.PHONY: all commit add status pull rebase
 
 all: push
 
