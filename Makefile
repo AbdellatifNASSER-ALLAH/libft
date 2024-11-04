@@ -7,7 +7,7 @@ push: commit
 
 commit: add
 	@read -p "Enter commint: " MSG ;\
-	git commit -m "$$MSG"
+	git commit -m '$MSG'
 
 add: status
 	@echo "adding..."
