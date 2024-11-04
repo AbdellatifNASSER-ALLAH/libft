@@ -6,10 +6,10 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 21:20:52 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/29 13:40:56 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/11/04 10:52:13 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "../Porject/libft.h"
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>

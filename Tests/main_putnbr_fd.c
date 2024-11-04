@@ -1,4 +1,4 @@
-#include "../Libft/libft.h"
+#include "../Project/libft.h"
 #include <limits.h>
 #include <stdio.h>
 
