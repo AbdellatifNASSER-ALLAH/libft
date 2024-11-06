@@ -6,14 +6,14 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 23:21:06 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/11/04 21:17:01 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/11/06 20:16:35 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
-	int	res;
+	long long	res;
 	int	sign;
 
 	res = 0;
@@ -27,8 +27,14 @@ int	ft_atoi(const char *nptr)
 		nptr++;
 	}
 	while (*nptr && *nptr >= '0' && *nptr <= '9')
+	{
 		res = res * 10 + (*nptr++ - 48);
-	return (sign * res);
+		if (res * sign < LONG_MIN)
+			return (0);
+		if (res * sign > LONG_MAX)
+			return (-1);
+	}
+	return (res * sign);
 }
 
 
