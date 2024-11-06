@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 12:59:12 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/11/06 13:27:11 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:34:08 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -27,7 +27,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *))
 			ft_lstclear(&dup, del);
 			return (NULL);
 		}
-
+		ft_lstadd_back(&dup, temp);
 		lst = lst->next;
 	}
+	return (dup);
 }
