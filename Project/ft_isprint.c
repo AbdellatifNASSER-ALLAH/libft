@@ -6,10 +6,9 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 14:22:00 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/25 14:22:32 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/11/06 17:37:58 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
 int	ft_isprint(int c)
 {

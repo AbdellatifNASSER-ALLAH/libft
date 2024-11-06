@@ -1,7 +1,5 @@
-#include "../Project/libft.h"
-#include <stdio.h>
-#include <limits.h>
-#include<string.h>
+#include "head.h"
+
 int main()
 {
 	int i;

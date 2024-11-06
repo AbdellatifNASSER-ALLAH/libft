@@ -1,7 +1,7 @@
-#include "../Project/libft.h"
-#include <ctype.h>
-#include <stdio.h>
-#include <string.h>
+#include "head.h"
+
+
+
 
 int test_ft_isalpha(void)
 {
