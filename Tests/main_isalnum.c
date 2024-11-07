@@ -20,6 +20,6 @@ int	run_test(void)
 
 int main()
 {
-	run _test();
+	run_test();
 	return 0;
 }

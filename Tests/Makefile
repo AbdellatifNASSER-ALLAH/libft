@@ -21,10 +21,8 @@ f%: $(SRCS)/main_%.c $(LIB)
 	$(CC) $(CFLAGS) $^
 
 $(LIB):
-	@if [ ! -f $(LIB_DIR)/$(NAME) ]; then \
-		$(MAKE) -C $(LIB_DIR) ;\
-		$(MAKE) -C $(LIB_DIR) clean ;\
-	fi
+		$(MAKE) -C $(LIB_DIR) 
+		$(MAKE) -C $(LIB_DIR) clean 
 
 run:
 	./a.out
