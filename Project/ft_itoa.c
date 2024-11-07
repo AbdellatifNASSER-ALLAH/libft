@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_ilen(int n);
+int		ft_ilen(int n);
 
 char	*ft_itoa(int n)
 {
