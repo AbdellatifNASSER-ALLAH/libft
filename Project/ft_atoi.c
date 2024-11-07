@@ -6,14 +6,14 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 23:21:06 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/11/06 20:41:22 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/11/07 21:34:43 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
-	long long	res;
+	long	res;
 	int			sign;
 
 	res = 0;

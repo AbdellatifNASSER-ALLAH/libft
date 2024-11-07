@@ -26,16 +26,16 @@ OBJ=$(SRC:.c=.o)
 OBJB=$(SRCB:.c=.o)
 NAME=libft.a
 
-all: $(SRC) $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar -crs $(NAME) $(OBJ)
+	ar -crs $(NAME) $?
 
-bonus : $(NAME) $(OBJB)
-	ar -crs $^
+bonus : $(OBJB)
+	ar -crs $(NAME) $? 
 
 %.o : %.c
-	$(CC) $(CFLAGS) -o $@ $< -c -I./ 
+	$(CC) $(CFLAGS) -o $@ $< -c 
 
 clean:
 	-rm -f $(OBJ) $(OBJB)
@@ -46,3 +46,4 @@ fclean: clean
 re:	fclean all
 
 .PHONY: all clean fclean re
+.SECONDARY: $(OBJ) $(OBJB)
