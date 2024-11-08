@@ -6,16 +6,12 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 14:24:38 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/30 23:55:40 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/11/08 13:48:57 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*p;
-
-	p = s;
-	while (n--)
-		*p++ = '\0';
+	ft_memset(s, 0, n);
 }

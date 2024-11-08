@@ -6,12 +6,28 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/03 14:30:32 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/11/03 16:06:42 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/11/08 13:58:45 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int		ft_ilen(int n);
+static	int	ft_ilen(int n)
+{
+	int	len;
+
+	len = 0;
+	if (n < 0)
+	{
+		n *= -1;
+		len++;
+	}
+	while (n)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
+}
 
 char	*ft_itoa(int n)
 {
@@ -35,22 +51,4 @@ char	*ft_itoa(int n)
 		n /= 10;
 	}
 	return (ft_strdup(p));
-}
-
-int	ft_ilen(int n)
-{
-	int	len;
-
-	len = 0;
-	if (n < 0)
-	{
-		n *= -1;
-		len++;
-	}
-	while (n)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
 }
