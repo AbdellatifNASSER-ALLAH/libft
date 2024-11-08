@@ -6,12 +6,12 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 12:50:04 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/11/07 18:01:18 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/11/09 00:40:08 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_is2free(char **p, int i)
+static int	ft_is2free(char **p, int i)
 {
 	if (!p[i])
 	{
@@ -23,7 +23,7 @@ int	ft_is2free(char **p, int i)
 	return (0);
 }
 
-char	*ft_fill_word(char **p, int i, char const *s, size_t len)
+static char	*ft_fill_word(char **p, int i, char const *s, size_t len)
 {
 	size_t	j;
 
@@ -40,7 +40,7 @@ char	*ft_fill_word(char **p, int i, char const *s, size_t len)
 	return (p[i]);
 }
 
-size_t	ft_words(const char *s, char c)
+static size_t	ft_words(const char *s, char c)
 {
 	size_t	count;
 
