@@ -12,17 +12,15 @@ LIB = -L$(LIB_DIR) -l$(LIB_NAME)
 all:
 	@echo "You have to paste the of the function you wanna compile!"
 
-f%: $(SRCS)/main_%.c $(LIB)
+f%: $(SRCS)/main_%.c 
 	@echo "Building with fsanitize..."
-	$(CC) $(CFLAGS) $(SANITIZE) $^
+	$(MAKE) -C $(LIB_DIR)
+	$(CC) $(CFLAGS) $(SANITIZE) $< $(LIB)
 
-%: $(SRCS)/main_%.c $(LIB)
+%: $(SRCS)/main_%.c 
 	@echo "Building..."
-	$(CC) $(CFLAGS) $^
-
-$(LIB):
-		$(MAKE) -C $(LIB_DIR) 
-		$(MAKE) -C $(LIB_DIR) clean 
+	$(MAKE) -C $(LIB_DIR)
+	$(CC) $(CFLAGS) $< $(LIB)
 
 run:
 	./a.out
