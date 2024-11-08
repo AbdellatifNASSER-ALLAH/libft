@@ -103,15 +103,15 @@ int main()
 	test_memcpy_behavior(13, "", NULL, 10);
 
 	// Test dest and src both null and size is non-zero
-	test_memcpy_behavior(13, NULL, NULL, 10);
+	test_memcpy_behavior(14, NULL, NULL, 10);
 
 	// Test dest null string and size is 0
-	test_memcpy_behavior(14, NULL, "", 0);
+	test_memcpy_behavior(15, NULL, "", 0);
 
 	// Test dest string src null and size is 0
-	test_memcpy_behavior(15, "", NULL, 0);
+	test_memcpy_behavior(16, "", NULL, 0);
 
 	// Test dest null src null and size is 0
-	test_memcpy_behavior(14, NULL, NULL, 0);
+	test_memcpy_behavior(17, NULL, NULL, 0);
 }
 

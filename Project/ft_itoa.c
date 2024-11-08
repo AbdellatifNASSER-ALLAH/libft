@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static	int	ft_ilen(int n)
+static int	ft_ilen(int n)
 {
 	int	len;
 
