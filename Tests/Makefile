@@ -28,7 +28,4 @@ run:
 clean:
 	-rm a.out
 
-fclean: clean
-	rm $(LIB_DIR)/$(NAME)
-
 .PHONY: all run clean fclean
