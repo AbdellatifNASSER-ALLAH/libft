@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/31 14:57:29 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/10/31 15:38:23 by abdnasse         ###   ########.fr       */
+/*   Created: 2024/10/30 16:24:20 by abdnasse          #+#    #+#             */
+/*   Updated: 2024/11/09 20:15:05 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*p;
-	size_t	size;
+	size_t	i;
+	size_t	slen;
 
-	size = ft_strlen(s1) + ft_strlen(s2) + 1;
-	if (!*s1 && !*s2)
+	if (!s)
+		return (0);
+	slen = ft_strlen(s);
+	if (slen < start)
 		return (ft_strdup("\0"));
-	p = (char *)malloc(size * sizeof(char));
+	if (slen - start < len)
+		len = slen - start;
+	p = (char *)malloc((len + 1) * sizeof(char));
 	if (!p)
 		return (0);
-	size = 0;
-	while (*s1)
-		p[size++] = *s1++;
-	while (*s2)
-		p[size++] = *s2++;
-	p[size] = 0;
+	i = 0;
+	while (s[start + i] && i < len)
+	{
+		p[i] = s[start + i];
+		i++;
+	}
+	p[i] = 0;
 	return (p);
 }

@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 12:50:04 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/11/09 00:40:08 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/11/09 20:10:10 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -62,6 +62,8 @@ char	**ft_split(char const *s, char c)
 	size_t	count;
 	size_t	i;
 
+	if (!s)
+		return (0);
 	p = (char **)malloc((ft_words(s, c) + 1) * sizeof(char *));
 	if (!p)
 		return (0);

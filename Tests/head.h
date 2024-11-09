@@ -1,7 +1,7 @@
 #ifndef HEAD_H
 #define HEAD_H
 
-#include "../Project/libft.h"
+#include "../libft/libft.h"
 #include <stdio.h>
 #include <string.h>
 #include <limits.h>

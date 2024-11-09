@@ -4,7 +4,7 @@ CFLAGS = -Wall -Wextra -Werror
 SANITIZE = -fsanitize=address
 
 SRCS = ./
-LIB_DIR = ../Project/
+LIB_DIR = ../libft/
 LIB_NAME = ft
 NAME = libft.a
 LIB = -L$(LIB_DIR) -l$(LIB_NAME)
