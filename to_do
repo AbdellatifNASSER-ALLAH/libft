@@ -14,7 +14,7 @@ ft_strlcpy.c
 ft_strlcat.c 
 ---------->DONE ft_toupper.c 
 ---------->DONE ft_tolower.c 
-ft_strchr.c 
+---------->DONE ft_strchr.c 
 ft_strrchr.c 
 Makefile 
 ft_strncmp.c 

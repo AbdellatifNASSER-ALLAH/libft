@@ -15,11 +15,13 @@ all:
 f%: $(SRCS)/main_%.c 
 	@echo "Building with fsanitize..."
 	$(MAKE) -C $(LIB_DIR)
+	$(MAKE) -C $(LIB_DIR) clean
 	$(CC) $(CFLAGS) $(SANITIZE) $< $(LIB)
 
 %: $(SRCS)/main_%.c 
 	@echo "Building..."
 	$(MAKE) -C $(LIB_DIR)
+	$(MAKE) -C $(LIB_DIR) clean
 	$(CC) $(CFLAGS) $< $(LIB)
 
 run:
