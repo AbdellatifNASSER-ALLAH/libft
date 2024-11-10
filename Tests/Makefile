@@ -1,5 +1,5 @@
 
-CC = cc
+CC = @cc
 CFLAGS = -g -Wall -Wextra -Werror
 SANITIZE = -fsanitize=address
 
@@ -8,16 +8,27 @@ LIB_DIR = ../libft/
 LIB_NAME = ft
 NAME = libft.a
 LIB = -L$(LIB_DIR) -l$(LIB_NAME)
+MAKE= @make
 
-all:
-	@echo "You have to paste the of the function you wanna compile!"
+SRCS_FILES = $(wildcard $(SRCS)/main_*.c) 
+BINS = $(SRCS_FILES:.c=.out)
+
+all: $(BINS)
+
+%.out : %.c
+	@echo "Building all tests..."
+	$(MAKE) -C $(LIB_DIR)
+	$(MAKE) -C $(LIB_DIR) clean
+	$(CC) $(CFLAGS) $< $(LIB) -o $@ ;
+	./$@;
+	@rm $@
+
 
 f%: $(SRCS)/main_%.c 
 	@echo "Building with fsanitize..."
 	$(MAKE) -C $(LIB_DIR)
 	$(MAKE) -C $(LIB_DIR) clean
-	$(CC) $(CFLAGS) $(SANITIZE) $< $(LIB)
-
+	$(CC) $(CFLAGS) $(SANITIZE) $< $(LIB) -o  
 %: $(SRCS)/main_%.c 
 	@echo "Building..."
 	$(MAKE) -C $(LIB_DIR)
@@ -25,9 +36,9 @@ f%: $(SRCS)/main_%.c
 	$(CC) $(CFLAGS) $< $(LIB)
 
 run:
-	./a.out
+	@./a.out
 
 clean:
-	-rm a.out
+	@-rm a.out
 
 .PHONY: all run clean fclean

@@ -6,7 +6,7 @@ int main()
 	char exp[30];
 	char *res;
 
-	i = 1935300000;
+	i = 0;
 	while (1)
 	{
 		sprintf(exp,"%d",i);	
@@ -18,7 +18,7 @@ int main()
 		}
 		if(i % 100000 == 0)
 			printf("PASS %d\n",i);
-		if(i == INT_MAX)
+		if(i == 10000)
 			break;
 		i++;
 

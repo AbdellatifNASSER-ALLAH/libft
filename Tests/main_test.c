@@ -66,7 +66,7 @@ int main() {
     free(ptr);   // Freeing NULL pointer should be safe
     print_result(1, "Freeing NULL pointer test (manual check for no crash)");
 
-    // Test 11: System memory boundary - simulate failure in low memory conditions (manual check)
+    // Test 11: Systestem memory boundary - simulate failure in low memory conditions (manual check)
     // This test is mostly to be checked manually, as running out of memory might be hard to simulate.
     ptr = ft_calloc(SIZE_MAX / 2, 2);
     if (ptr != NULL) {
