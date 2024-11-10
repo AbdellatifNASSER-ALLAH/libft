@@ -11,5 +11,6 @@
 #include <setjmp.h>
 #include <stdint.h>
 #include <assert.h>
+#include <execinfo.h>
 
 #endif
