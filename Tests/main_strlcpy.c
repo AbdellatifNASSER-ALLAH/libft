@@ -19,15 +19,15 @@ void	test(int t, char *dst, const char *src, size_t size)
 	int	seg_res = 0, seg_exp = 0;
 
 
-	printf("\033[0;33mTest %d : ft_strlcat(\"%s\", \"%s\", %lu)\033[0m", t, dst, src, size);
+	printf("\033[0;33mTest %d : ft_strlcpy(\"%s\", \"%s\", %lu)\033[0m", t, dst, src, size);
 	if (sigsetjmp(env , 1) == 0)
 	{
 		if(!dst)
-			exp = strlcat(dst, src, size);
+			exp = strlcpy(dst, src, size);
 		else
 		{
 			strcpy(dst,exp_dst);
-			exp = strlcat(exp_dst, src, size);
+			exp = strlcpy(exp_dst, src, size);
 		}
 	}
 	else
@@ -36,11 +36,11 @@ void	test(int t, char *dst, const char *src, size_t size)
 	{
 
 		if(!dst)
-			res = strlcat(dst, src, size);
+			res = strlcpy(dst, src, size);
 		else
 		{
 			strcpy(dst,res_dst);
-			res = strlcat(res_dst, src, size);
+			res = strlcpy(res_dst, src, size);
 		}
 	}
 	else
@@ -66,7 +66,7 @@ int main()
 {
 	signal(SIGSEGV, seg_handler);
 
-	// Test cases for ft_strlcat
+	// Test cases for ft_strlcpy
 
 	char dst0[50] ;
 	char src0[] = "world!";
