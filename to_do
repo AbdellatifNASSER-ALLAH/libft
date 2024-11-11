@@ -11,11 +11,11 @@ libft.h
 ---------->DONE ft_memcpy.c 
 ---------->DONE ft_memmove.c 
 ft_strlcpy.c 
-ft_strlcat.c 
+---------->DONE ft_strlcat.c 
 ---------->DONE ft_toupper.c 
 ---------->DONE ft_tolower.c 
 ---------->DONE ft_strchr.c 
-ft_strrchr.c 
+---------->DONE ft_strrchr.c 
 Makefile 
 ft_strncmp.c 
 ---------->DONE ft_memcmp.c 

@@ -88,7 +88,7 @@ void	test_ft_strlcpy(void)
 	char s[20];
 	char d[20];
 
-//	strlcpy(s, src, sizeof(s));
+	strlcpy(s, src, sizeof(s));
 	printf("strlcpy std: %s\n", s);
 	ft_strlcpy(d, src, sizeof(d));
 	printf("strlcpy ft_: %s\n", d);
@@ -162,8 +162,8 @@ void	test_ft_strrchr()
 	while (i < sizeof(c)/sizeof(c[0]))
 	{
 		printf("\n Test %lu : strrchr(%s, %d/%c) ---\n", i+1, s, c[i], c[i]);
-		printf("std: --> |%p\n",strrchr(s, c[i]));
-		printf("ft_: --> |%p\n",ft_strrchr(s, c[i]));
+		printf("std: --> |%s\n",strrchr(s, c[i]));
+		printf("ft_: --> |%s\n",ft_strrchr(s, c[i]));
 		i++;
 	}
 
@@ -183,7 +183,7 @@ int main(void)
 	//test_ft_toupper();
 	//test_ft_tolower();
 	//test_ft_strchr();
-	test_ft_strrchr();
+	//test_ft_strrchr();
 	return 0;
 }
 
