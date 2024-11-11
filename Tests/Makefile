@@ -14,11 +14,10 @@ SRCS_FILES = $(wildcard $(SRCS)/main_*.c)
 BINS = $(SRCS_FILES:.c=.out)
 
 all: $(BINS)
-
 %.out : %.c
 	@echo "Building all tests..."
 	$(MAKE) -C $(LIB_DIR)
-	$(MAKE) -C $(LIB_DIR) clean
+	@$(MAKE) -C $(LIB_DIR) clean
 	$(CC) $(CFLAGS) $< $(LIB) -o $@ ;
 	./$@;
 	@rm $@
@@ -27,18 +26,18 @@ all: $(BINS)
 f%: $(SRCS)/main_%.c 
 	@echo "Building with fsanitize..."
 	$(MAKE) -C $(LIB_DIR)
-	$(MAKE) -C $(LIB_DIR) clean
+	@$(MAKE) -C $(LIB_DIR) clean
 	$(CC) $(CFLAGS) $(SANITIZE) $< $(LIB) -o  
 %: $(SRCS)/main_%.c 
 	@echo "Building..."
 	$(MAKE) -C $(LIB_DIR)
-	$(MAKE) -C $(LIB_DIR) clean
+	@$(MAKE) -C $(LIB_DIR) clean
 	$(CC) $(CFLAGS) $< $(LIB)
 
 run:
 	@./a.out
 
 clean:
-	@-rm a.out
+	@-rm -rf a.out*
 
 .PHONY: all run clean fclean
