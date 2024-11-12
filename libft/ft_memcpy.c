@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 14:57:07 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/11/12 18:41:22 by abdnasse         ###   ########.fr       */
+/*   Updated: 2024/11/12 19:55:59 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,9 +18,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	d = dest;
 	s = src;
-	if (!dest && !src)
+	if (!n && !dest)
 		return (0);
-	if (dest == src)
+	if (dest && src && (dest == src))
 		return (dest);
 	while (n)
 	{

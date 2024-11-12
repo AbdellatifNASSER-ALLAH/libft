@@ -20,7 +20,6 @@ void test_memcpy_behavior(int t, void *dst, const void *src, size_t n)
 	if (sigsetjmp(jump_buffer, 1) == 0) {
 		exp = memcpy(dst, src, n);
 	} else {
-		ft_putstr_fd("\nstd __ seg\n" ,1);
 		segv_exp = 1;
 	}
 
@@ -28,11 +27,9 @@ void test_memcpy_behavior(int t, void *dst, const void *src, size_t n)
 	if (sigsetjmp(jump_buffer, 1) == 0) {
 		res = ft_memcpy(dst, src, n);
 	} else {
-		ft_putstr_fd("\nft_ seg\n" ,1);
 		segv_res = 1;
 	}
 
-	printf("\nres : %d |------- exp : %d \n", segv_res, segv_exp);
 	// Compare the behavior and handle segmentation faults
 	if (segv_exp && segv_res) {
 		printf("\n\033[0;32mPASSED! (Both caused segfault)\033[0m\n");
@@ -108,7 +105,7 @@ int main()
 	test_memcpy_behavior(13, "", NULL, 10);
 
 	// Test dest and src both null and size is non-zero
-	test_memcpy_behavior(14, NULL, 0, 10);
+	test_memcpy_behavior(14, NULL, NULL, 10);
 
 	// Test dest null string and size is 0
 	test_memcpy_behavior(15, NULL, "", 0);
@@ -119,5 +116,10 @@ int main()
 	// Test dest null src null and size is 0
 	test_memcpy_behavior(17, NULL, NULL, 0);
 	test_memcpy_behavior(18, "alo", "alo", 0);
+
+	printf("std : %s \n", memcpy("alow", "alow", 0));
+	printf("ft_ : %s \n", ft_memcpy("alow", "alow", 0));
+	printf("std : %s \n", memcpy("alow", "alow", 8));
+	printf("ft_ : %s \n", ft_memcpy("alow", "alow", 8));
 }
 
