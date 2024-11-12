@@ -4,7 +4,7 @@ CFLAGS = -g
 
 SANITIZE = -fsanitize=address
 
-SRCS = ./
+SRCS = .
 LIB_DIR = ../libft/
 LIB_NAME = ft
 NAME = libft.a
@@ -40,6 +40,6 @@ run:
 	@./a.out
 
 clean:
-	@-rm -rf a.out*
+	rm -rf a.out* $(BINS:.out=.out.dSYM/)
 
 .PHONY: all run clean fclean

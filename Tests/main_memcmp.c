@@ -66,4 +66,7 @@ int main()
 	// Compare first 3 elements (will pass)
 	test(20, arr1, arr2, sizeof(arr3));  // Compare first 3 elements (should fail if values differ)
 
+
+	printf("ft_ %d \nstd %d\n", ft_memcmp("a", "z", 1), memcmp("a", "z", 1));
+
 }

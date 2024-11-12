@@ -182,7 +182,7 @@ int main(void)
 	//test_ft_strlcat();
 	//test_ft_toupper();
 	//test_ft_tolower();
-	//test_ft_strchr();
+	test_ft_strchr();
 	//test_ft_strrchr();
 	return 0;
 }
