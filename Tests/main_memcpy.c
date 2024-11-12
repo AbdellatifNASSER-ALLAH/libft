@@ -12,6 +12,7 @@ void test_memcpy_behavior(int t, void *dst, const void *src, size_t n)
 {
 	ft_putstr_fd("test : ", 1);
 	ft_putnbr_fd(t, 1);
+	ft_putstr_fd("---------------------Start-------------------", 1);
 	int segv_exp = 0, segv_res = 0;
 	void *exp = NULL, *res = NULL;
 
@@ -19,6 +20,7 @@ void test_memcpy_behavior(int t, void *dst, const void *src, size_t n)
 	if (sigsetjmp(jump_buffer, 1) == 0) {
 		exp = memcpy(dst, src, n);
 	} else {
+		ft_putstr_fd("\nstd __ seg\n" ,1);
 		segv_exp = 1;
 	}
 
@@ -26,9 +28,11 @@ void test_memcpy_behavior(int t, void *dst, const void *src, size_t n)
 	if (sigsetjmp(jump_buffer, 1) == 0) {
 		res = ft_memcpy(dst, src, n);
 	} else {
+		ft_putstr_fd("\nft_ seg\n" ,1);
 		segv_res = 1;
 	}
 
+	printf("\nres : %d |------- exp : %d \n", segv_res, segv_exp);
 	// Compare the behavior and handle segmentation faults
 	if (segv_exp && segv_res) {
 		printf("\n\033[0;32mPASSED! (Both caused segfault)\033[0m\n");
@@ -43,6 +47,7 @@ void test_memcpy_behavior(int t, void *dst, const void *src, size_t n)
 		printf("\nexp : |%s|\nres : |%s|\n", (char *)exp, (char *)res);
 		printf("\033[0;32mPASSED!\033[0m\n");
 	}
+	printf("----------------------------End test %d----------------------------\n\n", t);
 }
 
 int main()

@@ -1,6 +1,7 @@
 
 CC = @cc
-CFLAGS = -g -Wall -Wextra -Werror
+CFLAGS = -g
+
 SANITIZE = -fsanitize=address
 
 SRCS = ./
@@ -14,6 +15,7 @@ SRCS_FILES = $(wildcard $(SRCS)/main_*.c)
 BINS = $(SRCS_FILES:.c=.out)
 
 all: $(BINS)
+
 %.out : %.c
 	@echo "Building all tests..."
 	$(MAKE) -C $(LIB_DIR)
