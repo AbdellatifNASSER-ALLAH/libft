@@ -118,5 +118,6 @@ int main()
 
 	// Test dest null src null and size is 0
 	test_memcpy_behavior(17, NULL, NULL, 0);
+	test_memcpy_behavior(18, "alo", "alo", 0);
 }
 
