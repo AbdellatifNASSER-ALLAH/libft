@@ -22,7 +22,7 @@ static int	ft_inset(char c, const char *set)
 	return (0);
 }
 
-static	void	ft_filltrim(char *p, char const *s, size_t start, size_t end)
+static void	ft_filltrim(char *p, char const *s, size_t start, size_t end)
 {
 	size_t	i;
 
