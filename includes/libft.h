@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 13:58:29 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/11/09 20:51:28 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/07/29 12:03:30 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdint.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# include "get_next_line.h"
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
