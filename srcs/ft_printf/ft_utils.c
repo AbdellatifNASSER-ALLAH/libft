@@ -1,54 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/03 14:30:32 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/07/29 12:50:03 by abdnasse         ###   ########.fr       */
+/*   Created: 2024/11/30 14:44:44 by abdnasse          #+#    #+#             */
+/*   Updated: 2024/12/02 15:32:17 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
+#include "ft_printf.h"
 
-static int	ft_intlen(int n)
+int	ft_ilen(unsigned int n)
 {
-	int	len;
+	int	i;
 
-	len = 0;
-	if (n < 0)
-	{
-		n *= -1;
-		len++;
-	}
+	i = 0;
+	if (n == 0)
+		return (1);
 	while (n)
 	{
+		i++;
 		n /= 10;
-		len++;
 	}
-	return (len);
+	return (i);
 }
 
-char	*ft_itoa(int n)
+int	ft_10power(int power)
 {
-	char	p[12];
-	int		len;
+	int	res;
 
-	if (n == 0)
-		return (ft_strdup("0"));
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	len = ft_intlen(n);
-	if (n < 0)
-	{
-		n *= -1;
-		p[0] = '-';
-	}
-	p[len] = '\0';
-	while (n && len--)
-	{
-		p[len] = (n % 10) + 48;
-		n /= 10;
-	}
-	return (ft_strdup(p));
+	res = 1;
+	while (power--)
+		res *= 10;
+	return (res);
 }
