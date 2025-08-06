@@ -6,7 +6,7 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:50:09 by abdnasse          #+#    #+#             */
-/*   Updated: 2024/11/28 19:56:43 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/08/06 15:26:12 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
@@ -88,21 +88,6 @@ int	f_buffer_to_cache(char *buffer, char **cache, ssize_t bytes)
 		return (1);
 	f_free(cache);
 	return (0);
-}
-
-char	*ft_strdup(const char *s)
-{
-	char	*p;
-	size_t	len;
-
-	len = ft_strlen(s);
-	p = (char *)malloc((len + 1) * sizeof(char));
-	if (!p)
-		return (0);
-	*(p + len) = 0;
-	while (len--)
-		*(p + len) = *(s + len);
-	return (p);
 }
 
 void	*f_free(char **p)

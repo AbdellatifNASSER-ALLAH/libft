@@ -6,29 +6,10 @@
 /*   By: abdnasse <abdnasse@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:48:30 by abdnasse          #+#    #+#             */
-/*   Updated: 2025/07/29 11:50:48 by abdnasse         ###   ########.fr       */
+/*   Updated: 2025/08/06 15:26:28 by abdnasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "get_next_line.h"
-
-void	ft_bzero(void *b, size_t len)
-{
-	unsigned char	*t;
-
-	t = b;
-	while (len--)
-		t[len] = 0;
-}
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
 
 size_t	ft_strcat(char *dst, char *src)
 {
